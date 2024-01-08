@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import { Education } from './components/Education';
 import  Hero  from './components/HeroSection';
 import  Skills  from './components/Skills';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -22,7 +23,8 @@ const Wrapper = styled.div`
 function App() {
     return(
         <ThemeProvider theme= {darkTheme}>
-        <Navbar></Navbar>
+            <Router>
+            <Navbar></Navbar>
             <Body>
                 <Hero></Hero>
                 <Wrapper>
@@ -30,6 +32,7 @@ function App() {
                 <Education></Education>
                 </Wrapper>
             </Body>
+            </Router>
         </ThemeProvider>
     );
 };
